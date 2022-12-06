@@ -1,0 +1,16 @@
+{
+  "adminHallOpen": ".conf-step__selectors-box",
+  "signOpenSale": "#start-sales",
+  "selectSeance": ".movie-seances__time",
+  "infoHall": ".buying__info-hall",
+  "button": "button",
+
+  "amountDays": ".page-nav__day",
+  "day": ".page-nav__day-number",
+  "moviePoster": ".movie .movie__info .movie__poster",
+  "movieDescription": ".movie .movie__info .movie__description",
+
+  "mail": "[type=email]",
+  "pass": "[type=password]",
+  "buttonLogin": "[value=Авторизоваться]"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "dz7_cypress_movie",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test:dev": "cypress run --browser chrome --headed --config-file cypress.config.js",
+    "test":"cypress open ",
+    "debug":"cypress run  --spec ./cypress/e2e/book_ticket.cy.js --browser chrome --headed --config-file cypress.config.js"
+  },
+  "keywords": [],
+  "author": "BSA",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^10.11.0"
+  },
+  "description": ""
+}
