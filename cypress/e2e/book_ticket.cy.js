@@ -20,16 +20,16 @@ it("Should find a hall and  book tickets", () => {
             cy.get(`body > nav > a:nth-child(${place.day})`).click();
             cy.contains(nameHall).parent().find(selectors.selectSeance).click();
             cy.get(selectors.infoHall).contains(nameHall).should("be.visible");
-            cy.get(
-              `div.buying-scheme__wrapper > div:nth-child(${place.row}) > span:nth-child(${place.seat})`
-            ).click();
+            cy.get(`div.buying-scheme__wrapper > div:nth-child(${place.row}) > span:nth-child(${place.seat})`).click();
             cy.get(selectors.button).contains("Забронировать").click();
             cy.get("h2").should("have.text", "Вы выбрали билеты:").should("be.visible");
-            cy.get("button").contains("Получить код бронирования").click();
-            cy.get("h2").should("have.text", "Электронный билет").should("be.visible");
             const placeTicket = place.row + "/" + place.seat;
             cy.contains(placeTicket).should("be.visible");
             cy.contains(nameHall).should("be.visible");
+            // не бронировать билет окончательно. не поянтно как снять потом бронь
+            // cy.get("button").contains("Получить код бронирования").click();
+            // cy.get("h2").should("have.text", "Электронный билет").should("be.visible");
+         
           });
           break;
         }

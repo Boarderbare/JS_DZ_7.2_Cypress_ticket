@@ -8,7 +8,7 @@ describe("Check login", () => {
 
   it("Should successfully login", () => {
     cy.login(accountData.loginValid, accountData.passValid);
-  });
+      });
 
   it("Should not login with invalid login", () => {
     cy.login(accountData.loginInvalid, accountData.passInvalid);
