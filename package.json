@@ -7,16 +7,17 @@
     "debug": "cypress run  --spec ./cypress/e2e/book_ticket.cy.js --browser chrome --headed",
     "cy:bookticket": "cypress run --spec ./cypress/e2e/book_ticket.cy.js  --browser chrome --group Sp1  --record --key cea49813-5771-42d1-a537-8b460d1a2f7b",
     "cy:short": "cypress run --spec ./cypress/e2e/short/* --browser chrome --group Sp2  --record --key cea49813-5771-42d1-a537-8b460d1a2f7b",
-    "cy:parallel:spec": "npm run cy:bookticket  & npm run cy:short",
+    "cy:parallel:spec": "concurrently \"npm run cy:bookticket\"   \"npm run cy:short\"",
     "cy:chrome": "cypress run --browser chrome --record --key cea49813-5771-42d1-a537-8b460d1a2f7b",
     "cy:edge": "cypress run --browser edge --record --key cea49813-5771-42d1-a537-8b460d1a2f7b",
     "cy:firefox": "cypress run  --browser firefox --record --key cea49813-5771-42d1-a537-8b460d1a2f7b",
-    "cy:parallel:browsers": "npm run cy:chrome  & npm run cy:firefox"
+    "cy:parallel:browsers": "concurrently  \"npm run cy:chrome\"   \"npm run cy:firefox\""
   },
   "keywords": [],
   "author": "BSA",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^7.6.0",
     "cypress": "^10.11.0"
   },
   "description": ""
