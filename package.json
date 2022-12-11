@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test:dev": "cypress run --browser chrome --headless --config-file cypress.config.js",
-    "test":"cypress open ",
-    "debug":"cypress run  --spec ./cypress/e2e/book_ticket.cy.js --browser chrome --headed --config-file cypress.config.js",
-    "test:dash":"npx cypress run --record --key cf4c5b09-4e6e-43b7-83e9-2fb53937b9a4"
+    "test:dev": "cypress run --browser chrome --headless",
+    "debug":"cypress run  --spec ./cypress/e2e/book_ticket.cy.js --browser chrome --headed",
+    "cy:bookticket": "cypress run --spec ./cypress/e2e/book_ticket.cy.js --browser chrome  --group Sp1 --ci-build-id 11 --record --key cea49813-5771-42d1-a537-8b460d1a2f7b",
+    "cy:short": "cypress run --spec ./cypress/e2e/short/* --browser chrome  --group Sp2  --ci-build-id 11 --record --key cea49813-5771-42d1-a537-8b460d1a2f7b",
+    "test:parallel":"  npm run cy:bookticket  & npm run cy:short "
+   
   },
   "keywords": [],
   "author": "BSA",
